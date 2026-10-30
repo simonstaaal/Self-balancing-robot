@@ -69,3 +69,15 @@ bool imu_enable_interrupt(void){
 
     return true;
 }
+
+bool config_lowpass_samplerate(uint8_t lowpass, uint8_t samplerate){
+
+    bool config_filter = imu_write(CONFIG, lowpass);
+    bool config_smpl = imu_write(SMPLRT_DIV, samplerate);
+
+    if(!config_filter || !config_smpl){
+        return false;
+    }
+
+    return true;
+}

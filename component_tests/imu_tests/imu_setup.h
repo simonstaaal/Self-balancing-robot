@@ -42,3 +42,24 @@ bool init_imu(void);
  */
 bool imu_enable_interrupt(void);
 
+
+/**
+ * @brief Configures the lowpass filter and the samplerate
+ * 
+ * @param lowpass Se docs of MPU 6050
+ * @param samplerate Se docs of MPU 6050
+ * @return true Successfull configuration 
+ * @return false Unsuccesfull configuration
+ */
+bool config_lowpass_samplerate(uint8_t lowpass, uint8_t samplerate);
+
+
+/**
+ * @brief Configures range of gyroscope and accelerometer
+ * 
+ * @param gyro_range Sets range of gyroscope
+ * @param accel_range Sets range of accelerometer
+ * @return true  Successfull configuration
+ * @return false Unsuccessfull configuration
+ */
+bool config_imu_range(uint8_t gyro_range, uint8_t accel_range);
