@@ -22,3 +22,7 @@
 #define AFS_SEL3 (0x03 << 2)
 
 
+#define DEVICE_RESET 0x80
+#define DEVICE_WAKE_SET_CLK 0x01
+#define DATA_READY_EN 0x01
+#define PIN_CONFIG 0x10

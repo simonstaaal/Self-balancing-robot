@@ -25,3 +25,20 @@ bool imu_write(uint8_t reg, uint8_t val);
 bool imu_read(uint8_t reg, uint8_t *buffer, uint8_t length);
 
 
+/**
+ * @brief Wake the IMU from sleppmode and changes clock source. Also controls if I2C is configured properly
+ * 
+ * @return true Sucessful initialisation
+ * @return false Unsuccessful initialisation
+ */
+bool init_imu(void);
+
+
+/**
+ * @brief Enables interrupt signal on the INT pin
+ * 
+ * @return true  Enabled interrupt signal was successful
+ * @return false Enabled interrupt signal was unsucessful
+ */
+bool imu_enable_interrupt(void);
+
