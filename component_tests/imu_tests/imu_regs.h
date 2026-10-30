@@ -1,6 +1,7 @@
 #ifndef IMU_REGS_H
 #define IMU_REGS_H
 
+#define IMU_ADRESS      0x68
 #define PWR_MGMT_1      0x6B
 #define WHO_AM_I        0x75
 #define CONFIG          0x1A
