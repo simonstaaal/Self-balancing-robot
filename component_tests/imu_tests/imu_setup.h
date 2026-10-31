@@ -1,8 +1,12 @@
+#ifndef IMU_SETUP_H
+#define IMU_SETUP_H
+
 #include "imu_regs.h"
 #include "imu_const.h"
 #include "pico/stdlib.h"
 #include "hardware/i2c.h" 
 #include <stdint.h>
+#include <stdio.h>
 
 typedef struct{
     int16_t accel_x;
@@ -83,3 +87,6 @@ bool config_imu_range(uint8_t gyro_range, uint8_t accel_range);
  * @return IMU_raw Returns strcut of raw data
  */
 IMU_raw read_data(void);
+
+
+#endif

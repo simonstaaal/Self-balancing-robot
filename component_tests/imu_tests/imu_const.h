@@ -1,3 +1,5 @@
+#ifndef IMU_CONST_H
+#define IMU_CONST_H
 #include "imu_regs.h"
 
 #define DLPF_CFG0 0x00
@@ -26,3 +28,5 @@
 #define DEVICE_WAKE_SET_CLK 0x01
 #define DATA_READY_EN 0x01
 #define PIN_CONFIG 0x10
+
+#endif
