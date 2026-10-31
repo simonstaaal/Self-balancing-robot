@@ -2,6 +2,18 @@
 #include "imu_const.h"
 #include "pico/stdlib.h"
 #include "hardware/i2c.h" 
+#include <stdint.h>
+
+typedef struct{
+    int16_t accel_x;
+    int16_t accel_y;
+    int16_t accel_z;
+    int16_t gyro_x;
+    int16_t gyro_y;
+    int16_t gyro_z;
+    int16_t temp;
+
+} IMU_raw;
 
 /**
  * @brief Helper function to write to IMU using I2C
@@ -63,3 +75,11 @@ bool config_lowpass_samplerate(uint8_t lowpass, uint8_t samplerate);
  * @return false Unsuccessfull configuration
  */
 bool config_imu_range(uint8_t gyro_range, uint8_t accel_range);
+
+
+/**
+ * @brief Reads data in burst and stores raw data from IMU
+ * 
+ * @return IMU_raw Returns strcut of raw data
+ */
+IMU_raw read_data(void);

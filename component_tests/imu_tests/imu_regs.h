@@ -10,7 +10,7 @@
 #define ACCEL_CONFIG    0x28   
 #define INT_PIN_CFG     0x37
 #define INT_ENABLE      0x38
-
+#define ACCEL_XOUT_H    0x3B
 
 
 

@@ -81,3 +81,35 @@ bool config_lowpass_samplerate(uint8_t lowpass, uint8_t samplerate){
 
     return true;
 }
+
+bool config_imu_range(uint8_t gyro_range, uint8_t accel_range){
+    
+    bool config_gyro = imu_write(GYRO_CONFIG, gyro_range);
+    bool config_accel = imu_write(ACCEL_CONFIG, accel_range);
+
+    if(!config_gyro || !config_accel){
+        return false;
+    }
+    
+    return true;
+}
+
+IMU_raw read_data(void){
+
+    IMU_raw data;
+
+    uint8_t buffer[14]; 
+
+    imu_read(ACCEL_XOUT_H, buffer, 14);
+
+    data.accel_x =  (buffer[0]<< 8) | buffer[1];
+    data.accel_y =  (buffer[2]<< 8) | buffer[3];
+    data.accel_z =  (buffer[4]<< 8) | buffer[5];
+    data.temp =     (buffer[6]<< 8) | buffer[7];
+    data.gyro_x =   (buffer[8]<< 8) | buffer[9];
+    data.gyro_y =   (buffer[10]<< 8) | buffer[11];
+    data.gyro_z =   (buffer[12]<< 8) | buffer[13];
+
+    return data;
+
+}
