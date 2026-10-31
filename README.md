@@ -12,3 +12,6 @@ The followin registers are used during the initialisation phase of the IMU.
 |  INT_PIN_CFG  (0x37)        |Configures behaviour of interrupt signal at the INT pin|
 |  INT_ENABLE   (0x38)           |Enables interrupt|
 
+
+# TO DO LIST
+- [ ] Add better handling of errors instead of boolean functions.
