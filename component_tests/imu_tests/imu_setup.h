@@ -9,6 +9,7 @@
 #include <stdio.h>
 
 typedef struct{
+    bool fetch_sucess;
     int16_t accel_x;
     int16_t accel_y;
     int16_t accel_z;

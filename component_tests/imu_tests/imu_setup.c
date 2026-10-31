@@ -100,8 +100,9 @@ IMU_raw read_data(void){
 
     uint8_t buffer[14]; 
 
-    imu_read(ACCEL_XOUT_H, buffer, 14);
+    bool fetch_success = imu_read(ACCEL_XOUT_H, buffer, 14);
 
+    data.fetch_sucess = fetch_success;
     data.accel_x =  (buffer[0]<< 8) | buffer[1];
     data.accel_y =  (buffer[2]<< 8) | buffer[3];
     data.accel_z =  (buffer[4]<< 8) | buffer[5];
