@@ -15,3 +15,4 @@ The followin registers are used during the initialisation phase of the IMU.
 
 # TO DO LIST
 - [ ] Add better handling of errors instead of boolean functions.
+- [ ] Add timeout to I2C 
